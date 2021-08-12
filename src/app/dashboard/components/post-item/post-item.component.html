@@ -1,0 +1,20 @@
+<mat-card class="post-item-card">
+  <mat-card-content>
+    <div class="content-wrapper">
+      <div class="title-wrapper">
+        <h3 class="mat-h3" (click)="openDialog()">{{ post.title }}</h3>
+      </div>
+      <div class="actions"
+           *appCheckPermissions="permission.Admin; feature: features.Posts">
+
+        <button mat-raised-button
+                color="primary"
+                (click)="onEdit()">Edit</button>
+
+        <button mat-raised-button
+                color="warn"
+                (click)="delete.emit()">Delete</button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

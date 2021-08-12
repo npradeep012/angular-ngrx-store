@@ -1,0 +1,25 @@
+<div class="loader" *ngIf="loading$ | async">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div class="app-wrapper">
+  <div class="nav-bar">
+    <h3>Website Manager</h3>
+
+    <div class="nav-bar-options" *ngIf="!!(user$ | async)">
+      <ul>
+        <li routerLink="/dashboard/posts">
+          Posts
+        </li>
+      </ul>
+
+      <ul>
+        <li (click)="onLogout()">
+          Logout
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
